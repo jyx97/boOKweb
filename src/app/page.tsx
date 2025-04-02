@@ -1,6 +1,7 @@
-import { redirect } from "next/navigation";
+import HomePage from "./Home/page";
 
-export default function HomePage() {
-  redirect("/main"); // Redireciona para /main/page.tsx
-  return null;
+export default function Home(){
+  return(
+    <HomePage/>
+  )
 }

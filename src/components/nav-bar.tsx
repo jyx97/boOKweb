@@ -1,40 +1,53 @@
-"use client";
-import React, { useState } from "react";
-import { Home, BookOpen, Bookmark, Settings, User, Bell, Search } from "lucide-react";
+import { Home, BookOpen, Bookmark, Settings, User} from "lucide-react";
 import Link from "next/link";
 
-interface NavBarProps {
-  active: "books" | "main";
-}
-
-export default function NavBar(props: NavBarProps) {
-  const [search, setSearch] = useState("");
+export default function NavBar() {
+  const navBarContent=[
+    {
+      key:"Home",
+      link:"/",
+      icon:<Home />
+    },
+    {
+      key:"Books",
+      link:"/books",
+      icon:<BookOpen />
+    },
+    {
+      key:"Bookmart",
+      link:"/",
+      icon:<Bookmark />
+    },
+    {
+      key:"Settings",
+      link:"/",
+      icon:<Settings />
+    },
+  ]
 
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
       <aside className="w-20 bg-rose-900 text-white flex flex-col items-center py-4 space-y-6">
         <FeatherIcon />
-        <Link href="/">
-          <NavItem icon={<Home />} />
-        </Link>        
-        <NavItem icon={<BookOpen />} />
-        <NavItem icon={<Bookmark />} />
-        <NavItem icon={<Settings />} />
-        <div className="mt-auto mb-4">
-          <NavItem icon={<User />} />
-        </div>
+        {navBarContent.map((content)=>(
+          <Link key={content.key}  href={content.link}>
+            <NavItem icon={content.icon}/>
+          </Link>
+        ))}
+        <NavItem icon={<User />} />
       </aside>
-
     </div>
   );
 }
 
 function NavItem({ icon }: { icon: React.ReactNode }) {
   return (
-    <button className="p-2 rounded-lg hover:bg-rose-700 transition">
-      {icon}
-    </button>
+    <div className="mt-auto mb-4">
+      <button className="p-2 rounded-lg hover:bg-rose-700 transition">
+        {icon}
+      </button>
+    </div>
   );
 }
 
