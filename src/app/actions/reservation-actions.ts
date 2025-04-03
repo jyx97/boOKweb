@@ -42,14 +42,16 @@ export async function createReservation(initialState: any, formData: FormData) {
                 time: formData.get("time"),
                 qnt: formData.get("qnt")
             },
-            errors: {
-                name: errors.find(e => e.field === "name")?.message,
-                date: errors.find(e => e.field === "date")?.message,
-                time: errors.find(e => e.field === "time")?.message,
-                qnt: errors.find(e => e.field === "qnt")?.message
+            errors: Array.isArray(errors)
+            ? {
+                name: errors.find(e => e.field === "name")?.message || "",
+                date: errors.find(e => e.field === "date")?.message || "",
+                time: errors.find(e => e.field === "time")?.message || "",
+                qnt: errors.find(e => e.field === "qnt")?.message || ""
             }
+            : {}
         };
     }
     
     redirect("/Reservation");
-}
+} 

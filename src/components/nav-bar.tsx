@@ -23,6 +23,12 @@ export default function NavBar() {
       link:"/",
       icon:<Settings />
     },
+    {
+      key: "User",
+      link: "/perfil",
+      icon: <User />,
+    }    
+    
   ]
 
   return (
@@ -30,12 +36,11 @@ export default function NavBar() {
       {/* Sidebar */}
       <aside className="w-20 bg-rose-900 text-white flex flex-col items-center py-4 space-y-6">
         <FeatherIcon />
-        {navBarContent.map((content)=>(
-          <Link key={content.key}  href={content.link}>
-            <NavItem icon={content.icon}/>
+        {navBarContent.map((content) => (
+          <Link key={content.key} href={content.link}>
+            <NavItem icon={content.icon} />
           </Link>
         ))}
-        <NavItem icon={<User />} />
       </aside>
     </div>
   );
