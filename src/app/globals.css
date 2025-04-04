@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --collection-1-contraste: rgba(113, 6, 39, 1);
+  --collection-1-destaque: rgba(137, 187, 254, 1);
+  --collection-1-fundo: rgba(241, 232, 228, 1);
+  --collection-1-fundo-secund-rio: rgba(73, 88, 103, 1);
+}
