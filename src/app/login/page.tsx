@@ -11,6 +11,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+<<<<<<< HEAD
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
   
@@ -34,6 +35,16 @@ export default function Login() {
       } else {
         alert("Erro inesperado ao fazer login.");
       }
+=======
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    if (email === "teste@email.com" && password === "123456") {
+      alert("Login bem-sucedido!");
+      router.push("/perfil"); // Redireciona para a página de perfil
+    } else {
+      alert("Email ou senha inválidos!");
+>>>>>>> cbc20a272bf6cbc11ff81815d6945530f0a35af8
     }
   };
 

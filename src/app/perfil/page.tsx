@@ -7,8 +7,11 @@ import Header from "@/components/Headers";
 import NavBar from "@/components/nav-bar";
 
 export default function Profile() {
+<<<<<<< HEAD
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+=======
+>>>>>>> cbc20a272bf6cbc11ff81815d6945530f0a35af8
   const [userData, setUserData] = useState<{ nome: string; username: string; email: string } | null>(null);
   const router = useRouter();
 
@@ -20,6 +23,7 @@ export default function Profile() {
     }
   }, []);
 
+<<<<<<< HEAD
   // Função para realizar o login
   const handleLogin = async () => {
     try {
@@ -41,6 +45,8 @@ export default function Profile() {
     }
   };
 
+=======
+>>>>>>> cbc20a272bf6cbc11ff81815d6945530f0a35af8
   return (
     <div className="flex">
       {/* Sidebar */}
